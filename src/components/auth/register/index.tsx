@@ -15,7 +15,7 @@ const RegisterPage: React.FC<IPropsRegister> = (
     return (
         <>
             <Typography variant="h2" fontFamily={'Poppins'} textAlign="center">
-                Регистрация
+                Registration
             </Typography>
             <Typography
                 variant="body1"
@@ -23,14 +23,14 @@ const RegisterPage: React.FC<IPropsRegister> = (
                 fontFamily={'Poppins'}
                 textAlign="center"
             >
-                Введите данные для регистрации
+                Enter your registration details
             </Typography>
             <TextField
                 fullWidth={true}
                 margin="normal"
-                label="Имя"
+                label="Name"
                 variant="outlined"
-                placeholder="Введите ваше имя"
+                placeholder="Enter your name"
                 onChange={(e) => setFirstName(e.target.value)}
             />
             <TextField
@@ -38,7 +38,7 @@ const RegisterPage: React.FC<IPropsRegister> = (
                 margin="normal"
                 label="Username"
                 variant="outlined"
-                placeholder="Введите ваш username"
+                placeholder="Enter your username"
                 onChange={(e) => setUsername(e.target.value)}
             />
             <TextField
@@ -46,7 +46,7 @@ const RegisterPage: React.FC<IPropsRegister> = (
                 margin="normal"
                 label="Email"
                 variant="outlined"
-                placeholder="Введите ваш email"
+                placeholder="Enter your email"
                 onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
@@ -55,16 +55,16 @@ const RegisterPage: React.FC<IPropsRegister> = (
                 label="Password"
                 variant="outlined"
                 type="password"
-                placeholder="Введите ваш пароль"
+                placeholder="Enter your password"
                 onChange={(e) => setPassword(e.target.value)}
             />
             <TextField
                 fullWidth={true}
                 margin="normal"
-                label="Password"
+                label="Repeat your password"
                 variant="outlined"
                 type="password"
-                placeholder="Повторите ваш пароль"
+                placeholder="Repeat your password"
                 onChange={(e) => setRepeatPassword(e.target.value)}
             />
             <Button
@@ -77,15 +77,15 @@ const RegisterPage: React.FC<IPropsRegister> = (
                 variant="contained"
                 type="submit"
             >
-                Регистрация
+                Registration
             </Button>
             <Typography variant="body1" sx={{ fontFamily: 'Poppins' }}>
-                У вас есть аккаунта?
+                Do you have an account?
                 <span
                     className="incidingText"
                     onClick={() => navigate('/login')}
                 >
-                    Авторизация
+                    Authorization
                 </span>
             </Typography>
         </>

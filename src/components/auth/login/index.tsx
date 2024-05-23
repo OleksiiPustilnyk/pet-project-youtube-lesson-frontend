@@ -2,11 +2,11 @@ import { Button, TextField, Typography } from '@mui/material'
 import { IPropsLogin } from '../../../common/types/auth'
 
 const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
-    const { setEmail, setPassword, navigate } = props
+    const { navigate, register, errors } = props
     return (
         <>
             <Typography variant="h2" fontFamily={'Poppins'} textAlign="center">
-                Авторизация
+                Authorization
             </Typography>
             <Typography
                 variant="body1"
@@ -14,24 +14,35 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
                 fontFamily={'Poppins'}
                 textAlign="center"
             >
-                Введите ваш логин и пароль
+                Enter your email and password
             </Typography>
             <TextField
+                error={!!errors.email}
                 fullWidth={true}
                 margin="normal"
                 label="Email"
                 variant="outlined"
-                placeholder="Введите ваш email"
-                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                helperText={errors.email ? `${errors.email.message}` : ''}
+                {...register('email', {
+                    required: 'This is a required field',
+                    pattern:
+                        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                })}
             />
             <TextField
+                error={!!errors.password}
                 fullWidth={true}
                 margin="normal"
                 label="Password"
                 variant="outlined"
                 type="password"
-                placeholder="Введите ваш пароль"
-                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
+                helperText={errors.password ? `${errors.password.message}` : ''}
+                {...register('password', {
+                    required: 'This is a required field',
+                    minLength: 6,
+                })}
             />
             <Button
                 type="submit"
@@ -43,15 +54,15 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
                 }}
                 variant="contained"
             >
-                Войти
+                Login
             </Button>
             <Typography variant="body1" sx={{ fontFamily: 'Poppins' }}>
-                У вас нет аккаунта?
+                Don't have an account?
                 <span
                     className="incidingText"
                     onClick={() => navigate('/register')}
                 >
-                    Регистрация
+                    Registration
                 </span>
             </Typography>
         </>
