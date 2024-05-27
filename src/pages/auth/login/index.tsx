@@ -1,19 +1,17 @@
-import { Button, TextField, Typography } from '@mui/material'
+import { TextField, Typography } from '@mui/material'
 import { IPropsLogin } from '../../../common/types/auth'
+import AppButton from '../../../components/app-button'
+import { useStyles } from '../styles'
 
 const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
     const { navigate, register, errors } = props
+    const classes = useStyles()
     return (
         <>
-            <Typography variant="h2" fontFamily={'Poppins'} textAlign="center">
+            <Typography variant="h2" textAlign="center" fontSize={32}>
                 Authorization
             </Typography>
-            <Typography
-                variant="body1"
-                marginBottom={3}
-                fontFamily={'Poppins'}
-                textAlign="center"
-            >
+            <Typography variant="body1" marginBottom={3} textAlign="center">
                 Enter your email and password
             </Typography>
             <TextField
@@ -37,10 +35,9 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
                 helperText={errors.password ? `${errors.password.message}` : ''}
                 {...register('password')}
             />
-            <Button
+            <AppButton
                 type="submit"
                 sx={{
-                    fontFamily: 'Poppins',
                     marginTop: 2,
                     marginBottom: 2,
                     width: ' 60%',
@@ -48,11 +45,11 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
                 variant="contained"
             >
                 Login
-            </Button>
-            <Typography variant="body1" sx={{ fontFamily: 'Poppins' }}>
+            </AppButton>
+            <Typography variant="body1">
                 Don't have an account?
                 <span
-                    className="incidingText"
+                    className={classes.incitingText}
                     onClick={() => navigate('/register')}
                 >
                     Registration

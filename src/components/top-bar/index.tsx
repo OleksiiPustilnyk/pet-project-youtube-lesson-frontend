@@ -16,11 +16,14 @@ import {
     MenuOutlined,
 } from '@mui/icons-material/'
 import { ColorModeContext } from '../../theme'
-import { useContext } from 'react'
+import { FC, useContext } from 'react'
 import { useStyles } from './styles'
 import FlexBetween from '../flex-between'
+import { ITopBarProps } from '../../common/types/top-bar'
 
-const TopBarComponent = (props: any) => {
+const TopBarComponent: FC<ITopBarProps> = (
+    props: ITopBarProps
+): JSX.Element => {
     const theme = useTheme()
     const colorMode: any = useContext(ColorModeContext)
     const classes = useStyles()
