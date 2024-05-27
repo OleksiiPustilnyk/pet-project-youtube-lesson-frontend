@@ -2,7 +2,6 @@ import { useStyles } from './styles'
 import {
     Box,
     Drawer,
-    Divider,
     IconButton,
     List,
     ListItem,
@@ -12,30 +11,26 @@ import {
     Typography,
     useTheme,
 } from '@mui/material'
-import {
-    ChevronLeftOutlined,
-    ChevronRightOutlined,
-    LoginOutlined,
-    LogoutOutlined,
-} from '@mui/icons-material'
+import { ChevronLeftOutlined, LogoutOutlined } from '@mui/icons-material'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import FlexBetween from '../flex-between'
 import { navMenu } from '../../common/moks/navigate'
-import { tokens } from '../../theme'
 import Logo from '../../assets/images/sidebar/logo-demo.svg'
+import { ISidebarProps } from '../../common/types/sidebar'
 
-const SidebarComponent = (props: any) => {
+const SidebarComponent: FC<ISidebarProps> = (
+    props: ISidebarProps
+): JSX.Element => {
     const [active, setActive] = useState('')
     const { isNonMobile, drawerWidth, isOpen, setIsOpen } = props
     const classes = useStyles()
     const { pathname } = useLocation()
     const navigate = useNavigate()
     const theme = useTheme()
-    const colors = tokens(theme.palette.mode)
 
     useEffect(() => {
-        setActive(pathname.substring(1))
+        setActive(pathname)
     }, [pathname])
 
     const renderNavMenu = navMenu.map((element) => {
@@ -43,7 +38,11 @@ const SidebarComponent = (props: any) => {
             <ListItem key={element.id}>
                 <ListItemButton
                     onClick={() => navigate(`${element.path}`)}
-                    className={classes.navItem}
+                    className={
+                        active === element.path
+                            ? `${classes.navItem} ${classes.active}`
+                            : classes.navItem
+                    }
                 >
                     <ListItemIcon>{element.icon}</ListItemIcon>
                     <ListItemText>

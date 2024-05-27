@@ -1,21 +1,19 @@
-import { Button, TextField, Typography } from '@mui/material'
+import { TextField, Typography } from '@mui/material'
 import { IPropsRegister } from '../../../common/types/auth'
+import AppButton from '../../../components/app-button'
+import { useStyles } from '../styles'
 
 const RegisterPage: React.FC<IPropsRegister> = (
     props: IPropsRegister
 ): JSX.Element => {
     const { navigate, register, errors } = props
+    const classes = useStyles()
     return (
         <>
-            <Typography variant="h2" fontFamily={'Poppins'} textAlign="center">
+            <Typography variant="h2" textAlign="center" fontSize={32}>
                 Registration
             </Typography>
-            <Typography
-                variant="body1"
-                marginBottom={3}
-                fontFamily={'Poppins'}
-                textAlign="center"
-            >
+            <Typography variant="body1" marginBottom={3} textAlign="center">
                 Enter your registration details
             </Typography>
             <TextField
@@ -74,9 +72,8 @@ const RegisterPage: React.FC<IPropsRegister> = (
                 }
                 {...register('confirmPassword')}
             />
-            <Button
+            <AppButton
                 sx={{
-                    fontFamily: 'Poppins',
                     marginTop: 2,
                     marginBottom: 2,
                     width: ' 60%',
@@ -85,11 +82,11 @@ const RegisterPage: React.FC<IPropsRegister> = (
                 type="submit"
             >
                 Registration
-            </Button>
-            <Typography variant="body1" sx={{ fontFamily: 'Poppins' }}>
+            </AppButton>
+            <Typography variant="body1">
                 Do you have an account?
                 <span
-                    className="incidingText"
+                    className={classes.incitingText}
                     onClick={() => navigate('/login')}
                 >
                     Authorization
