@@ -24,11 +24,7 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
                 variant="outlined"
                 placeholder="Enter your email"
                 helperText={errors.email ? `${errors.email.message}` : ''}
-                {...register('email', {
-                    required: 'This is a required field',
-                    pattern:
-                        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                })}
+                {...register('email')}
             />
             <TextField
                 error={!!errors.password}
@@ -39,10 +35,7 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
                 type="password"
                 placeholder="Enter your password"
                 helperText={errors.password ? `${errors.password.message}` : ''}
-                {...register('password', {
-                    required: 'This is a required field',
-                    minLength: 6,
-                })}
+                {...register('password')}
             />
             <Button
                 type="submit"
