@@ -1,10 +1,10 @@
 import { TextField, Typography } from '@mui/material'
 import { IPropsLogin } from '../../../common/types/auth'
-import AppButton from '../../../components/app-button'
 import { useStyles } from '../styles'
+import AppLoadingButton from '../../../components/loading-button'
 
 const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
-    const { navigate, register, errors } = props
+    const { navigate, register, errors, loading } = props
     const classes = useStyles()
     return (
         <>
@@ -35,7 +35,8 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
                 helperText={errors.password ? `${errors.password.message}` : ''}
                 {...register('password')}
             />
-            <AppButton
+            <AppLoadingButton
+                loading={loading}
                 type="submit"
                 sx={{
                     marginTop: 2,
@@ -45,7 +46,7 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
                 variant="contained"
             >
                 Login
-            </AppButton>
+            </AppLoadingButton>
             <Typography variant="body1">
                 Don't have an account?
                 <span
