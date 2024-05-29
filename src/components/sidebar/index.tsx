@@ -77,7 +77,7 @@ const SidebarComponent: FC<ISidebarProps> = (
                         <Box>
                             <FlexBetween>
                                 <Box className={classes.brand}>
-                                    <img src={Logo} alt="LogoImage" />
+                                    <img src={Logo} alt="Logo" />
                                     <Typography
                                         variant="h1"
                                         className={classes.brandTitle}
