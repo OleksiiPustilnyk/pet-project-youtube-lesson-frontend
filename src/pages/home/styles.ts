@@ -27,20 +27,31 @@ export const useStyles = makeStyles((theme: Theme) => {
             // height: '100%',
             flexDirection: 'column',
             justifyContent: 'flex-end',
-            paddingBottom: '20px',
+            paddingBottom: '35px',
         },
         cardPrice: {
             fontSize: 32,
             fontWeight: 700,
-            lineHeight: '48px',
+            lineHeight: '38px',
+            margin: '0 0 15px',
+        },
+        priceTrend: {
+            width: '20%',
+            display: 'flex',
+            alignItems: 'center',
+            padding: '2px',
+            borderRadius: 4,
             margin: 0,
         },
-        cardCapitalize: {
-            color: `${colors.secondary.DEFAULT}`,
-            fontWeight: 400,
-            fontSize: 18,
-            lineHeight: '21px',
-            margin: 0,
+        trendUp: {
+            backgroundColor: '#A9FFA7',
+            color: '#037400',
+            width: 'max-content',
+        },
+        trendDown: {
+            backgroundColor: '#FFA7A7',
+            color: '#740000',
+            width: 'max-content',
         },
     }
 })
