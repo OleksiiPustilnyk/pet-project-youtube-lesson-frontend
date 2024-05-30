@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getFavoriteAssets } from '../thunks/assets'
+import { getFavoriteAssets } from '../../thunks/assets'
 
 const initialState: any = {
     assets: [],

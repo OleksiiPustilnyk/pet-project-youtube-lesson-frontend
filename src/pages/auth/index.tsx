@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { LoginSchema, RegisterSchema } from '../../utils/yup'
 import { useStyles } from './styles'
-import { loginUser, registerUser } from '../../store/slice/thunks/auth'
+import { loginUser, registerUser } from '../../store/thunks/auth'
 
 const AuthRootComponent: React.FC = (): JSX.Element => {
     const location = useLocation()

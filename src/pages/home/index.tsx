@@ -1,7 +1,7 @@
 import { FC, useCallback, useEffect, useMemo, useRef } from 'react'
 import { useAppDispatch, useAppSelector } from '../../utils/hook'
-import { getFavoriteAssets } from '../../store/slice/thunks/assets'
-import { Grid, Box } from '@mui/material'
+import { getFavoriteAssets } from '../../store/thunks/assets'
+import { Box, Grid } from '@mui/material'
 import { useStyles } from './styles'
 import AreaChart from '../../components/charts/area-chart'
 import TrendUp from '../../assets/images/chart/trend-up.svg'
@@ -13,16 +13,15 @@ const Home: FC = (): JSX.Element => {
     const favoriteAssets: IChartData[] = useAppSelector(
         (state) => state.assets.favoriteAssets
     )
-    const classes = useStyles()
     const dispatch = useAppDispatch()
     const fetchDataRef = useRef(false)
+    const classes = useStyles()
 
     const favoriteAssetName = useMemo(() => ['bitcoin', 'ethereum'], [])
     const filteredArray = favoriteAssets.filter(
         (value, index, self) =>
             index === self.findIndex((t) => t.name === value.name)
     )
-
     const fetchData = useCallback(
         (data: string[]) => {
             data.forEach((element: string) => {
@@ -42,9 +41,6 @@ const Home: FC = (): JSX.Element => {
         const currentPrice = element.singleAsset.map(
             (element: any) => element.current_price
         )
-        // const currentCap = element.singleAsset.map(
-        //     (element: any) => element.market_cap
-        // )
         const changePrice = element.singleAsset.map(
             (element: any) => element.price_change_percentage_24h
         )
@@ -94,4 +90,5 @@ const Home: FC = (): JSX.Element => {
         </Box>
     )
 }
+
 export default Home
