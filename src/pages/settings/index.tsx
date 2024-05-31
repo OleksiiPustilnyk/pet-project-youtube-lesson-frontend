@@ -1,8 +1,8 @@
-const SettingsComponent = () => {
+const SettingsPage = () => {
     return (
         <div>
             <h1>Settings page</h1>
         </div>
     )
 }
-export default SettingsComponent
+export default SettingsPage

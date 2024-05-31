@@ -10,7 +10,7 @@ import { LoginSchema, RegisterSchema } from '../../utils/yup'
 import { useStyles } from './styles'
 import { loginUser, registerUser } from '../../store/thunks/auth'
 
-const AuthRootComponent: React.FC = (): JSX.Element => {
+const AuthRootPage: React.FC = (): JSX.Element => {
     const location = useLocation()
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
@@ -93,4 +93,4 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
         </div>
     )
 }
-export default AuthRootComponent
+export default AuthRootPage
