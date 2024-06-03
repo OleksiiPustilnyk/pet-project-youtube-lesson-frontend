@@ -8,7 +8,7 @@ export const useStyles = makeStyles((theme: Theme) => {
             paddingTop: '10px',
         },
         themeIcon: {
-            marginRight: '45px',
+            // marginRight: '15px',
         },
     }
 })
