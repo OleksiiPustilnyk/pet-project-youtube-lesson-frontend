@@ -1,74 +1,8 @@
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableRow,
-    TableHead,
-    Paper,
-} from '@mui/material'
-import { useStyles } from './styles'
+import AssetsTableComponent from '../assetsTable'
 
 const TopPriceComponent = (props: any) => {
     const { assets } = props
-    const classes = useStyles()
 
-    return (
-        <>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Asset name</TableCell>
-                            <TableCell align="right">Price</TableCell>
-                            <TableCell align="right">Changes (%)</TableCell>
-                            <TableCell align="right">Changes ($)</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {assets.map((element: any) => (
-                            <TableRow
-                                key={element.name}
-                                sx={{
-                                    '&:last-child td, &:last-child th': {
-                                        border: 0,
-                                    },
-                                }}
-                            >
-                                <TableCell component="th" scope="row">
-                                    {element.name}
-                                </TableCell>
-                                <TableCell align="right">
-                                    {element.current_price} $
-                                </TableCell>
-                                <TableCell
-                                    align="right"
-                                    className={
-                                        element.price_change_24h > 0
-                                            ? `${classes.priceUp}`
-                                            : `${classes.priceDown}`
-                                    }
-                                >
-                                    {element.price_change_24h.toFixed(2)}
-                                </TableCell>
-                                <TableCell
-                                    align="right"
-                                    className={
-                                        element.price_change_percentage_24h > 0
-                                            ? `${classes.priceUp}`
-                                            : `${classes.priceDown}`
-                                    }
-                                >
-                                    {element.price_change_percentage_24h.toFixed(
-                                        2
-                                    )}
-                                </TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </>
-    )
+    return <AssetsTableComponent assets={assets} />
 }
 export default TopPriceComponent
