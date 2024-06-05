@@ -25,7 +25,7 @@ export const useStyles = makeStyles((theme: Theme) => {
             //     boxShadow: 'none !important',
             //     backgroundImage: 'none !important',
             // },
-            '& MuiOutlinedInput-root': {
+            '& .MuiOutlinedInput-root': {
                 '&.Mui-focused fieldset': {
                     borderColor: colors.blue,
                 },
