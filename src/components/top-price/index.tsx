@@ -1,4 +1,4 @@
-import AssetsTableComponent from '../assetsTable'
+import AssetsTableComponent from '../assets-table'
 
 const TopPriceComponent = (props: any) => {
     const { assets } = props
