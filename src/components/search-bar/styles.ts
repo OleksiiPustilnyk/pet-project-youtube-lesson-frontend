@@ -20,5 +20,19 @@ export const useStyles = makeStyles((theme: Theme) => {
         searchInput: {
             padding: '18px 12px',
         },
+        root: {
+            '& .MuiOutlinedInput-root': {
+                '&.Mui-focused fieldset': {
+                    borderColor: colors.green,
+                },
+            },
+            '& label.Mui-focused': {
+                color: `${
+                    theme.palette.mode === 'dark'
+                        ? colors.white.DEFAULT
+                        : colors.black.DEFAULT
+                }`,
+            },
+        },
     }
 })

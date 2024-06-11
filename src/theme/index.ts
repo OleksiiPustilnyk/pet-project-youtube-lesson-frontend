@@ -40,7 +40,7 @@ export const tokens = (mode: string) => ({
               },
               accentMain: '#0F0E0E',
               borderColor: '#3C3C3C',
-              blue: '#1900D5',
+              green: '#4CAF50',
           }
         : {
               white: {
@@ -72,7 +72,7 @@ export const tokens = (mode: string) => ({
               },
               accentMain: '#F7F7F7',
               borderColor: '#D1D1D1',
-              blue: '#1900D5',
+              green: '#4CAF50',
           }),
 })
 
@@ -127,7 +127,7 @@ export const themeSettings: any = (mode: string) => {
             },
             h4: {
                 fontFamily: ['Poppins', 'sans-serif'].join(','),
-                fontSize: 25,
+                fontSize: 22,
                 fontWeight: 500,
             },
             p: {

@@ -28,7 +28,7 @@ export const useStyles = makeStyles((theme: Theme) => {
         },
         navItem: {
             '&:hover': {
-                backgroundColor: '#1900D5 !important',
+                backgroundColor: '#4CAF50 !important',
                 color: '#fff',
                 borderRadius: '4px',
                 '& .MuiSvgIcon-root': {
@@ -37,9 +37,12 @@ export const useStyles = makeStyles((theme: Theme) => {
             },
         },
         active: {
-            backgroundColor: '#1900D5 !important',
+            backgroundColor: '#4CAF50 !important',
             color: '#fff !important',
             borderRadius: '4px !important',
+            '& .MuiListItemIcon-root': {
+                color: '#fff !important',
+            },
         },
     }
 })

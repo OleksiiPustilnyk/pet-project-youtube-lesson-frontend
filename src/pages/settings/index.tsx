@@ -36,7 +36,7 @@ const SettingsPage: FC = (): JSX.Element => {
                     textColor="secondary"
                     TabIndicatorProps={{
                         style: {
-                            backgroundColor: colors.blue,
+                            backgroundColor: colors.green,
                         },
                     }}
                 >

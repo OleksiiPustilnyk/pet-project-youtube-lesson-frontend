@@ -53,9 +53,9 @@ const DeleteUserComponent: FC = (): JSX.Element => {
                                 checked={checked}
                                 onChange={() => setChecked(!checked)}
                                 sx={{
-                                    color: colors.blue,
+                                    color: colors.green,
                                     '&.Mui-checked': {
-                                        color: colors.blue,
+                                        color: colors.green,
                                     },
                                 }}
                             />

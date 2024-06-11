@@ -3,6 +3,7 @@ import { ISingleAsset } from '../../common/types/assets'
 import { useAppSelector } from '../../utils/hook'
 import { useNavigate } from 'react-router-dom'
 import { FC, useState } from 'react'
+import { useStyles } from './styles'
 
 const SearchBarComponent: FC = (): JSX.Element => {
     const [selectedItem, setSelectedItem] = useState<string | null>('')
@@ -11,8 +12,10 @@ const SearchBarComponent: FC = (): JSX.Element => {
         (state) => state.assets.assets
     )
 
+    const classes = useStyles()
+
     return (
-        <Stack spacing={2} sx={{ width: 300 }}>
+        <Stack spacing={2} sx={{ width: 300 }} className={classes.root}>
             <Autocomplete
                 value={selectedItem}
                 onChange={(e: any, value: string | null) => {

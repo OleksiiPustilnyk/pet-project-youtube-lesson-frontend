@@ -11,8 +11,11 @@ const ThemeSwitcherComponent: FC = (): JSX.Element => {
     const classes = useStyles()
 
     return (
-        <Grid onClick={colorMode.toggleColorMode} className={classes.iconBlock}>
-            <IconButton className={classes.themeIcon}>
+        <Grid className={classes.iconBlock}>
+            <IconButton
+                className={classes.themeIcon}
+                onClick={colorMode.toggleColorMode}
+            >
                 {theme.palette.mode === 'dark' ? <DarkMode /> : <LightMode />}
             </IconButton>
             <IconButton>

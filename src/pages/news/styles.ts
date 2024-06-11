@@ -43,5 +43,8 @@ export const useStyles = makeStyles((theme: Theme) => {
         readMore: {
             textAlign: 'center',
         },
+        img: {
+            textAlign: 'center',
+        },
     }
 })

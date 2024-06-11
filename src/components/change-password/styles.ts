@@ -8,7 +8,7 @@ export const useStyles = makeStyles((theme: Theme) => {
         root: {
             '& .MuiOutlinedInput-root': {
                 '&.Mui-focused fieldset': {
-                    borderColor: colors.blue,
+                    borderColor: colors.green,
                 },
             },
             '& label.Mui-focused': {

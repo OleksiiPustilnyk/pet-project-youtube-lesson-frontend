@@ -10,11 +10,11 @@ const NewsPage: FC = (): JSX.Element => {
     const classes = useStyles()
 
     const renderNewsBlock = news.map((element: any) => (
-        <Grid container className={classes.newsBlock}>
-            <Grid item xs={12} md={3}>
+        <Grid container className={classes.newsBlock} key={element.id}>
+            <Grid item xs={12} md={5} lg={3.5} className={classes.img}>
                 <img src={element.imageurl} alt={element.category} />
             </Grid>
-            <Grid item xs={12} md={9}>
+            <Grid item xs={12} md={7} lg={8.5}>
                 <Box className={classes.newsTitle}>
                     <Typography variant="h3">{element.title}</Typography>
                 </Box>
@@ -24,7 +24,7 @@ const NewsPage: FC = (): JSX.Element => {
             </Grid>
             <Grid item xs={12} md={12} className={classes.readMore}>
                 <Typography variant="h4">
-                    <Link href={element.url}>Read more</Link>
+                    <Link href={element.url}>Read more...</Link>
                 </Typography>
             </Grid>
         </Grid>
