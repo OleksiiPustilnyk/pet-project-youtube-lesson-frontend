@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../utils/hook'
 import { Box, Grid, TextField } from '@mui/material'
 import { useStyles } from './styles'
 import AppLoadingButton from '../loading-button'
-import { updateUserInfo } from '../../store/thunks/auth'
+import { getPublicUser, updateUserInfo } from '../../store/thunks/auth'
 
-const SettingsPersonalInfoComponent = () => {
+const SettingsPersonalInfoComponent: FC = (): JSX.Element => {
     const dispatch = useAppDispatch()
     const classes = useStyles()
     const [name, setName] = useState('')
@@ -29,6 +29,7 @@ const SettingsPersonalInfoComponent = () => {
             email: email,
         }
         dispatch(updateUserInfo(data))
+        dispatch(getPublicUser())
     }
 
     return (
@@ -53,7 +54,7 @@ const SettingsPersonalInfoComponent = () => {
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     type="text"
-                    label="Email"
+                    label="Username"
                     variant="outlined"
                 />
                 <TextField
@@ -61,7 +62,7 @@ const SettingsPersonalInfoComponent = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     type="text"
-                    label="Password"
+                    label="Email"
                     variant="outlined"
                 />
                 <Box className={classes.button}>

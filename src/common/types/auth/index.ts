@@ -2,7 +2,6 @@ import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
 
 export interface IPropsLogin<
     TFieldValues extends FieldValues = LoginFormFields,
-    // TContext = any,
 > {
     navigate: (to: string) => void
     register: UseFormRegister<TFieldValues>
@@ -12,7 +11,6 @@ export interface IPropsLogin<
 
 export interface IPropsRegister<
     TFieldValues extends FieldValues = RegisterFormFields,
-    // TContext = any,
 > {
     navigate: (to: string) => void
     register: UseFormRegister<TFieldValues>
@@ -21,7 +19,7 @@ export interface IPropsRegister<
 }
 
 export interface IAuthState {
-    user: IPublicUser
+    user: any
     isLogged: boolean
     isLoading: boolean
 }
