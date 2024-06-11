@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../utils/hook'
 import { getWatchlistElements } from '../../store/thunks/watchlist'
 import { getTopPriceData } from '../../store/thunks/assets'
-import AssetsTableComponent from '../../components/assets-table'
+import AssetsTableComponent from '../../components/assets-table/AssetsTableComponent'
 import { Grid, Typography } from '@mui/material'
 import { useStyles } from './styles'
 

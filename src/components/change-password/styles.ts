@@ -25,10 +25,6 @@ export const useStyles = makeStyles((theme: Theme) => {
             alignItems: 'center',
             padding: '32px 0',
         },
-        inputField: {
-            width: '40%',
-            marginBottom: '15px !important',
-        },
         buttonBlock: {
             margin: '32px 0',
         },

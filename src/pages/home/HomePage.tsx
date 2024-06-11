@@ -3,12 +3,12 @@ import { useAppDispatch, useAppSelector } from '../../utils/hook'
 import { getFavoriteAssets, getTopPriceData } from '../../store/thunks/assets'
 import { Box, Grid } from '@mui/material'
 import { useStyles } from './styles'
-import AreaChart from '../../components/charts/area-chart'
+import AreaChart from '../../components/charts/area-chart/AreaChart'
 import TrendUp from '../../assets/images/chart/trend-up.svg'
 import TrendDown from '../../assets/images/chart/trend-down.svg'
-import LineChart from '../../components/charts/line-chart'
+import LineChart from '../../components/charts/line-chart/LineChart'
 import { IChartData, ISingleAsset } from '../../common/types/assets'
-import TopPriceComponent from '../../components/top-price'
+import TopPriceComponent from '../../components/top-price/TopPriceComponent'
 
 const HomePage: FC = (): JSX.Element => {
     const favoriteAssets: IChartData[] = useAppSelector(

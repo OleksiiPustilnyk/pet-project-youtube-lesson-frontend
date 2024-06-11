@@ -11,7 +11,7 @@ import {
     Snackbar,
     Typography,
 } from '@mui/material'
-import FlexBetween from '../../components/flex-between'
+import FlexBetween from '../../components/flex-between/FlexBetween'
 import { useStyles } from './styles'
 import { createWatchListRecord } from '../../store/thunks/assets'
 

@@ -1,6 +1,6 @@
 import { TextField, Typography } from '@mui/material'
 import { IPropsRegister } from '../../../common/types/auth'
-import AppLoadingButton from '../../../components/loading-button'
+import AppLoadingButton from '../../../components/loading-button/AppLoadingButton'
 import { useStyles } from '../styles'
 
 const RegisterPage: React.FC<IPropsRegister> = (

@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import LoginPage from './login'
-import RegisterPage from './register'
+import LoginPage from './login/LoginPage'
+import RegisterPage from './register/RegisterPage'
 import { Box } from '@mui/material'
 import { useAppDispatch, useAppSelector } from '../../utils/hook'
 import { AppErrors } from '../../common/errors'

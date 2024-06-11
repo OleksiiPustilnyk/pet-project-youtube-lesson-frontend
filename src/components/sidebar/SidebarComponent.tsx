@@ -14,12 +14,12 @@ import {
 import { ChevronLeftOutlined, LogoutOutlined } from '@mui/icons-material'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { FC, useEffect, useState } from 'react'
-import FlexBetween from '../flex-between'
+import FlexBetween from '../flex-between/FlexBetween'
 import { navMenu } from '../../common/moks/navigate'
 import Logo from '../../assets/images/sidebar/logo-demo.svg'
 import { ISidebarProps } from '../../common/types/sidebar'
-import ThemeSwitcherComponent from '../theme-switcher'
-import SearchBarComponent from '../search-bar'
+import ThemeSwitcherComponent from '../theme-switcher/ThemeSwitcherComponent'
+import SearchBarComponent from '../search-bar/SearchBarComponent'
 
 const SidebarComponent: FC<ISidebarProps> = (
     props: ISidebarProps

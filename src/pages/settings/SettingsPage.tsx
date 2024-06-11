@@ -1,14 +1,14 @@
 import { Box, Grid, Tab, Tabs, useTheme } from '@mui/material'
 import { FC, useEffect, useState } from 'react'
-import TabPanel from '../../components/tab-panel'
+import TabPanel from '../../components/tab-panel/TabPanel'
 import { tabProps } from '../../utils/helpers'
 import { tokens } from '../../theme'
 import { useStyles } from './styles'
-import SettingsPersonalInfoComponent from '../../components/settings-personal-info'
+import SettingsPersonalInfoComponent from '../../components/settings-personal-info/SettingsPersonalInfoComponent'
 import { useAppDispatch } from '../../utils/hook'
 import { getPublicUser } from '../../store/thunks/auth'
-import ChangePasswordComponent from '../../components/change-password'
-import DeleteUserComponent from '../../components/delete-user'
+import ChangePasswordComponent from '../../components/change-password/ChangePasswordComponent'
+import DeleteUserComponent from '../../components/delete-user/DeleteUserComponent'
 
 const SettingsPage: FC = (): JSX.Element => {
     const [value, setvalue] = useState(0)

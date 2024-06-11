@@ -2,10 +2,10 @@ import { FC } from 'react'
 import { AppBar, Grid, Toolbar, Typography } from '@mui/material'
 import { MenuOutlined } from '@mui/icons-material'
 import { useStyles } from './styles'
-import FlexBetween from '../flex-between'
+import FlexBetween from '../flex-between/FlexBetween'
 import { ITopBarProps } from '../../common/types/top-bar'
-import ThemeSwitcherComponent from '../theme-switcher'
-import SearchBarComponent from '../search-bar'
+import ThemeSwitcherComponent from '../theme-switcher/ThemeSwitcherComponent'
+import SearchBarComponent from '../search-bar/SearchBarComponent'
 import { useAppSelector } from '../../utils/hook'
 
 const TopBarComponent: FC<ITopBarProps> = (
