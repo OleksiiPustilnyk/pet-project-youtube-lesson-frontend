@@ -1,31 +1,18 @@
-import { useStyles } from './styles'
-import {
-    Box,
-    Drawer,
-    IconButton,
-    List,
-    ListItem,
-    ListItemButton,
-    ListItemIcon,
-    ListItemText,
-    Typography,
-    useTheme,
-} from '@mui/material'
-import { ChevronLeftOutlined, LogoutOutlined } from '@mui/icons-material'
-import { useLocation, useNavigate } from 'react-router-dom'
 import { FC, useEffect, useState } from 'react'
-import FlexBetween from '../flex-between/FlexBetween'
-import { navMenu } from '../../common/moks/navigate'
-import Logo from '../../assets/images/sidebar/logo-demo.svg'
+import { Box, Drawer, useTheme } from '@mui/material'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useStyles } from './styles'
 import { ISidebarProps } from '../../common/types/sidebar'
-import ThemeSwitcherComponent from '../theme-switcher/ThemeSwitcherComponent'
-import SearchBarComponent from '../search-bar/SearchBarComponent'
+import SidebarHeader from './SidebarHeader'
+import SidebarNavMenu from './SidebarNavMenu'
+import SidebarLogout from './SidebarLogout'
+import SidebarFooter from './SidebarFooter'
 
 const SidebarComponent: FC<ISidebarProps> = (
     props: ISidebarProps
 ): JSX.Element => {
-    const [active, setActive] = useState('')
     const { isNonMobile, drawerWidth, isOpen, setIsOpen } = props
+    const [active, setActive] = useState('')
     const classes = useStyles()
     const { pathname } = useLocation()
     const navigate = useNavigate()
@@ -40,28 +27,6 @@ const SidebarComponent: FC<ISidebarProps> = (
         sessionStorage.removeItem('token')
         navigate('/login')
     }
-
-    const renderNavMenu = navMenu.map((element) => {
-        return (
-            <ListItem key={element.id}>
-                <ListItemButton
-                    onClick={() => navigate(`${element.path}`)}
-                    className={
-                        active === element.path
-                            ? `${classes.navItem} ${classes.active}`
-                            : classes.navItem
-                    }
-                >
-                    <ListItemIcon>{element.icon}</ListItemIcon>
-                    <ListItemText>
-                        <Typography variant={'body1'}>
-                            {element.name}
-                        </Typography>
-                    </ListItemText>
-                </ListItemButton>
-            </ListItem>
-        )
-    })
 
     return (
         <Box component="nav">
@@ -81,63 +46,21 @@ const SidebarComponent: FC<ISidebarProps> = (
                         },
                     }}
                 >
-                    <Box className={classes.navBlock}>
-                        <Box>
-                            <FlexBetween>
-                                <Box className={classes.brand}>
-                                    <img src={Logo} alt="Logo" />
-                                    <Typography
-                                        variant="h1"
-                                        className={classes.brandTitle}
-                                    >
-                                        Demo
-                                    </Typography>
-                                </Box>
-                                {!isNonMobile && (
-                                    <IconButton
-                                        onClick={() => setIsOpen(!isOpen)}
-                                    >
-                                        <ChevronLeftOutlined />
-                                    </IconButton>
-                                )}
-                            </FlexBetween>
+                    <Box>
+                        <Box className={classes.navBlock}>
+                            <SidebarHeader
+                                isNonMobile={isNonMobile}
+                                setIsOpen={setIsOpen}
+                            />
+                            <SidebarNavMenu active={active} />
+                            <SidebarFooter isNonMobile={isNonMobile} />
                         </Box>
-                        <List>
-                            {!isNonMobile && (
-                                <ListItem>
-                                    <SearchBarComponent />
-                                </ListItem>
-                            )}
-                        </List>
-                        <List className={classes.navList}>{renderNavMenu}</List>
-                    </Box>
-                    <Box width="100%">
-                        <List>
-                            {!isNonMobile && (
-                                <ListItem>
-                                    <Box padding="5px">
-                                        <ThemeSwitcherComponent />
-                                    </Box>
-                                </ListItem>
-                            )}
-                            <ListItem>
-                                <ListItemButton
-                                    className={classes.navItem}
-                                    onClick={handleLogout}
-                                >
-                                    <ListItemIcon>
-                                        <LogoutOutlined />
-                                    </ListItemIcon>
-                                    <ListItemText>
-                                        <Typography>Logout</Typography>
-                                    </ListItemText>
-                                </ListItemButton>
-                            </ListItem>
-                        </List>
+                        <SidebarLogout handleLogout={handleLogout} />
                     </Box>
                 </Drawer>
             )}
         </Box>
     )
 }
+
 export default SidebarComponent

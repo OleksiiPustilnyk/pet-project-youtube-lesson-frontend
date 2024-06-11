@@ -65,7 +65,7 @@ const HomePage: FC = (): JSX.Element => {
         return (
             <Grid item xs={12} sm={6} lg={6} key={element.name}>
                 <Grid container className={classes.topCardItem}>
-                    <Grid item xs={12} sm={4} lg={4}>
+                    <Grid item xs={12} sm={12} lg={4}>
                         <h3 className={classes.assetName}>{element.name}</h3>
                         <div className={classes.itemDetails}>
                             <h3 className={classes.cardPrice}>
@@ -87,7 +87,7 @@ const HomePage: FC = (): JSX.Element => {
                             </Box>
                         </div>
                     </Grid>
-                    <Grid item xs={12} sm={8} lg={8}>
+                    <Grid item xs={12} sm={12} lg={8}>
                         <AreaChart data={element.price_chart_data} />
                     </Grid>
                 </Grid>

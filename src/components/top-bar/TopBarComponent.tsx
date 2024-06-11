@@ -1,12 +1,13 @@
 import { FC } from 'react'
-import { AppBar, Grid, Toolbar, Typography } from '@mui/material'
-import { MenuOutlined } from '@mui/icons-material'
+import { AppBar, Grid, Toolbar } from '@mui/material'
 import { useStyles } from './styles'
 import FlexBetween from '../flex-between/FlexBetween'
 import { ITopBarProps } from '../../common/types/top-bar'
 import ThemeSwitcherComponent from '../theme-switcher/ThemeSwitcherComponent'
 import SearchBarComponent from '../search-bar/SearchBarComponent'
 import { useAppSelector } from '../../utils/hook'
+import MenuButton from './MenuButton'
+import UserGreeting from './UserGreeting'
 
 const TopBarComponent: FC<ITopBarProps> = (
     props: ITopBarProps
@@ -25,13 +26,8 @@ const TopBarComponent: FC<ITopBarProps> = (
                 >
                     <Grid item sm={3} lg={3}>
                         <FlexBetween>
-                            <MenuOutlined
-                                className={classes.menuIcon}
-                                onClick={() => setIsOpen(!isOpen)}
-                            />
-                            <Typography variant="h3">
-                                Welcome {user ? `${user.firstName}` : ''}
-                            </Typography>
+                            <MenuButton setIsOpen={setIsOpen} isOpen={isOpen} />
+                            <UserGreeting user={user} />
                         </FlexBetween>
                     </Grid>
                     {isNonMobile && (

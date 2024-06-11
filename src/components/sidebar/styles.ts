@@ -27,6 +27,9 @@ export const useStyles = makeStyles((theme: Theme) => {
             marginBottom: '55px',
         },
         navItem: {
+            '& .MuiListItemIcon-root': {
+                color: colors.secondary.DEFAULT,
+            },
             '&:hover': {
                 backgroundColor: '#4CAF50 !important',
                 color: '#fff',
