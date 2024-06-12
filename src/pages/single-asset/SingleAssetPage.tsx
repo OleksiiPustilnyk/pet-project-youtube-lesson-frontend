@@ -83,7 +83,7 @@ const SingleAssetPage: FC = (): JSX.Element => {
                         <Grid className={classes.cardItem}>
                             <FlexBetween>
                                 <Typography
-                                    variant="body1"
+                                    variant="h2"
                                     className={classes.cardTitle}
                                 >
                                     Price:&nbsp;

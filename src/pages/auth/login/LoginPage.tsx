@@ -1,7 +1,7 @@
 import { TextField, Typography } from '@mui/material'
 import { IPropsLogin } from '../../../common/types/auth'
 import { useStyles } from '../styles'
-import AppLoadingButton from '../../../components/loading-button/AppLoadingButton'
+import AppLoadingButton from '../../../components/UI/loading-button/AppLoadingButton'
 
 const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
     const { navigate, register, errors, loading } = props

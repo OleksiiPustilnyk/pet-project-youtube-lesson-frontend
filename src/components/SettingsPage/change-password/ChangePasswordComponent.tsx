@@ -1,9 +1,9 @@
 import { FC, useState } from 'react'
 import { Box, Grid, TextField } from '@mui/material'
 import { useStyles } from '../settings-personal-info/styles'
-import AppLoadingButton from '../loading-button/AppLoadingButton'
-import { useAppDispatch } from '../../utils/hook'
-import { updateUserPassword } from '../../store/thunks/auth'
+import AppLoadingButton from '../../UI/loading-button/AppLoadingButton'
+import { useAppDispatch } from '../../../utils/hook'
+import { updateUserPassword } from '../../../store/thunks/auth'
 
 const ChangePasswordComponent: FC = (): JSX.Element => {
     const [newPassword, setNewPassword] = useState('')

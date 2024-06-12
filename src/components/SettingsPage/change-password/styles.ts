@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles'
 import { Theme } from '@mui/material'
-import { tokens } from '../../theme'
+import { tokens } from '../../../theme'
 
 export const useStyles = makeStyles((theme: Theme) => {
     const colors = tokens(theme.palette.mode)
@@ -25,12 +25,8 @@ export const useStyles = makeStyles((theme: Theme) => {
             alignItems: 'center',
             padding: '32px 0',
         },
-        inputField: {
-            width: '40%',
-            marginBottom: '15px !important',
-        },
-        button: {
-            marginTop: 32,
+        buttonBlock: {
+            margin: '32px 0',
         },
     }
 })

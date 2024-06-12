@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../utils/hook'
 import { getWatchlistElements } from '../../store/thunks/watchlist'
 import { getTopPriceData } from '../../store/thunks/assets'
@@ -17,23 +17,24 @@ const WatchlistPage: FC = (): JSX.Element => {
         dispatch(getWatchlistElements())
     }, [dispatch])
 
-    const filteredArray = assets.filter((element: any) => {
-        return watchlist.some((otherElement: any) => {
-            return otherElement.assetId === element.id
-        })
-    })
+    const filteredAssets = assets.filter((asset: any) =>
+        watchlist.some(
+            (watchlistItem: any) => watchlistItem.assetId === asset.id
+        )
+    )
 
     return (
-        <Grid className={classes.root}>
-            <Grid className={classes.watchlistHeading}>
+        <Grid container className={classes.root}>
+            <Grid item xs={12} className={classes.watchlistHeading}>
                 <Typography variant="h2" className={classes.heading}>
                     Favorites
                 </Typography>
             </Grid>
-            <Grid className={classes.assetsTableBlock}>
-                <AssetsTableComponent assets={filteredArray} />
+            <Grid item xs={12} className={classes.assetsTableBlock}>
+                <AssetsTableComponent assets={filteredAssets} />
             </Grid>
         </Grid>
     )
 }
+
 export default WatchlistPage

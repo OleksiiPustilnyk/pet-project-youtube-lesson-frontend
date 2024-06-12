@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../../utils/hook'
+import { useAppDispatch, useAppSelector } from '../../../utils/hook'
 import { Box, Grid, TextField } from '@mui/material'
 import { useStyles } from './styles'
-import AppLoadingButton from '../loading-button/AppLoadingButton'
-import { getPublicUser, updateUserInfo } from '../../store/thunks/auth'
+import AppLoadingButton from '../../UI/loading-button/AppLoadingButton'
+import { getPublicUser, updateUserInfo } from '../../../store/thunks/auth'
 
 const SettingsPersonalInfoComponent: FC = (): JSX.Element => {
     const dispatch = useAppDispatch()

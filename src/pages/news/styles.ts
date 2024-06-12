@@ -18,7 +18,7 @@ export const useStyles = makeStyles((theme: Theme) => {
         },
         blockTitle: {
             textAlign: 'center',
-            marginBottom: 32,
+            marginBottom: '32px !important',
         },
         newsBlock: {
             backgroundColor: `${

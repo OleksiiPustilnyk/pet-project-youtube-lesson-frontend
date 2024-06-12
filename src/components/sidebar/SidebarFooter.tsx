@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Box, List, ListItem } from '@mui/material'
-import ThemeSwitcherComponent from '../theme-switcher/ThemeSwitcherComponent'
-import SearchBarComponent from '../search-bar/SearchBarComponent'
+import ThemeSwitcherComponent from '../UI/theme-switcher/ThemeSwitcherComponent'
+import SearchBarComponent from '../UI/search-bar/SearchBarComponent'
 
 interface SidebarFooterProps {
     isNonMobile: boolean

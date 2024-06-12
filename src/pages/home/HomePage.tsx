@@ -3,12 +3,10 @@ import { useAppDispatch, useAppSelector } from '../../utils/hook'
 import { getFavoriteAssets, getTopPriceData } from '../../store/thunks/assets'
 import { Box, Grid } from '@mui/material'
 import { useStyles } from './styles'
-import AreaChart from '../../components/charts/area-chart/AreaChart'
-import TrendUp from '../../assets/images/chart/trend-up.svg'
-import TrendDown from '../../assets/images/chart/trend-down.svg'
-import LineChart from '../../components/charts/line-chart/LineChart'
+import LineChart from '../../components/HomePage/charts/line-chart/LineChart'
 import { IChartData, ISingleAsset } from '../../common/types/assets'
-import TopPriceComponent from '../../components/top-price/TopPriceComponent'
+import TopPriceComponent from '../../components/HomePage/top-price/TopPriceComponent'
+import FavoriteAssetCard from '../../components/HomePage/favorite-asset-card/FavoriteAssetCard'
 
 const HomePage: FC = (): JSX.Element => {
     const favoriteAssets: IChartData[] = useAppSelector(
@@ -53,52 +51,12 @@ const HomePage: FC = (): JSX.Element => {
         dispatch(getTopPriceData())
     }, [dispatch, favoriteAssetName, fetchData])
 
-    const renderFavoriteBlock = filteredArray.map((element: IChartData) => {
-        let currentPrice = 0
-        let changePrice = 0
-
-        element.singleAsset.forEach((element: ISingleAsset) => {
-            currentPrice = element.current_price
-            changePrice = element.price_change_percentage_24h
-        })
-
-        return (
-            <Grid item xs={12} sm={6} lg={6} key={element.name}>
-                <Grid container className={classes.topCardItem}>
-                    <Grid item xs={12} sm={12} lg={4}>
-                        <h3 className={classes.assetName}>{element.name}</h3>
-                        <div className={classes.itemDetails}>
-                            <h3 className={classes.cardPrice}>
-                                ${currentPrice}
-                            </h3>
-                            <Box
-                                className={
-                                    changePrice > 0
-                                        ? `${classes.priceTrend} ${classes.trendUp}`
-                                        : `${classes.priceTrend} ${classes.trendDown}`
-                                }
-                            >
-                                {changePrice > 0 ? (
-                                    <img src={TrendUp} alt="TrendUp" />
-                                ) : (
-                                    <img src={TrendDown} alt="TrendDown" />
-                                )}
-                                <span>{Number(changePrice).toFixed(2)}%</span>
-                            </Box>
-                        </div>
-                    </Grid>
-                    <Grid item xs={12} sm={12} lg={8}>
-                        <AreaChart data={element.price_chart_data} />
-                    </Grid>
-                </Grid>
-            </Grid>
-        )
-    })
-
     return (
         <Box className={classes.root}>
             <Grid container spacing={2} className={classes.areaChart}>
-                {renderFavoriteBlock}
+                {filteredArray.map((element: IChartData) => (
+                    <FavoriteAssetCard key={element.name} element={element} />
+                ))}
             </Grid>
             <Grid container className={classes.lineChartBlock}>
                 <Grid item xs={12} sm={12} lg={12}>

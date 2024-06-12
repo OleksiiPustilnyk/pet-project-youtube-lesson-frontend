@@ -1,17 +1,17 @@
-import { Box, Grid, Tab, Tabs, useTheme } from '@mui/material'
 import { FC, useEffect, useState } from 'react'
+import { Box, Grid, Tab, Tabs, useTheme } from '@mui/material'
 import TabPanel from '../../components/tab-panel/TabPanel'
 import { tabProps } from '../../utils/helpers'
 import { tokens } from '../../theme'
 import { useStyles } from './styles'
-import SettingsPersonalInfoComponent from '../../components/settings-personal-info/SettingsPersonalInfoComponent'
+import SettingsPersonalInfoComponent from '../../components/SettingsPage/settings-personal-info/SettingsPersonalInfoComponent'
+import ChangePasswordComponent from '../../components/SettingsPage/change-password/ChangePasswordComponent'
+import DeleteUserComponent from '../../components/SettingsPage/delete-user/DeleteUserComponent'
 import { useAppDispatch } from '../../utils/hook'
 import { getPublicUser } from '../../store/thunks/auth'
-import ChangePasswordComponent from '../../components/change-password/ChangePasswordComponent'
-import DeleteUserComponent from '../../components/delete-user/DeleteUserComponent'
 
 const SettingsPage: FC = (): JSX.Element => {
-    const [value, setvalue] = useState(0)
+    const [value, setValue] = useState(0)
     const dispatch = useAppDispatch()
     const theme = useTheme()
     const colors = tokens(theme.palette.mode)
@@ -22,7 +22,7 @@ const SettingsPage: FC = (): JSX.Element => {
     }, [dispatch])
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setvalue(newValue)
+        setValue(newValue)
     }
 
     return (
@@ -35,9 +35,7 @@ const SettingsPage: FC = (): JSX.Element => {
                     centered
                     textColor="secondary"
                     TabIndicatorProps={{
-                        style: {
-                            backgroundColor: colors.green,
-                        },
+                        style: { backgroundColor: colors.green },
                     }}
                 >
                     <Tab label="Personal data" {...tabProps(0)} />
@@ -57,4 +55,5 @@ const SettingsPage: FC = (): JSX.Element => {
         </Grid>
     )
 }
+
 export default SettingsPage

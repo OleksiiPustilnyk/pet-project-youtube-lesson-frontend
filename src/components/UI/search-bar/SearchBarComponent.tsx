@@ -1,6 +1,6 @@
 import { Stack, Autocomplete, TextField } from '@mui/material'
-import { ISingleAsset } from '../../common/types/assets'
-import { useAppSelector } from '../../utils/hook'
+import { ISingleAsset } from '../../../common/types/assets'
+import { useAppSelector } from '../../../utils/hook'
 import { useNavigate } from 'react-router-dom'
 import { FC, useState } from 'react'
 import { useStyles } from './styles'

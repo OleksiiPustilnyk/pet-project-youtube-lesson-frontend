@@ -10,7 +10,7 @@ import {
     Legend,
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
-import { ILineChartProps } from '../../../common/types/assets'
+import { ILineChartProps } from '../../../../common/types/assets'
 import moment from 'moment'
 
 ChartJS.register(
