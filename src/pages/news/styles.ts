@@ -46,5 +46,8 @@ export const useStyles = makeStyles((theme: Theme) => {
         img: {
             textAlign: 'center',
         },
+        newsText: {
+            color: `${colors.primary[900]}`,
+        },
     }
 })

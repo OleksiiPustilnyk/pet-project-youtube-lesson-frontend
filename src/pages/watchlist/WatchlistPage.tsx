@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import { FC, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../utils/hook'
 import { getWatchlistElements } from '../../store/thunks/watchlist'
 import { getTopPriceData } from '../../store/thunks/assets'

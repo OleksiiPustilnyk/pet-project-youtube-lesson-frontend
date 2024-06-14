@@ -14,7 +14,7 @@ export const tokens = (mode: string) => ({
                   600: '#232323',
                   700: '#3D3D3D',
                   800: '#525252',
-                  900: '#5C5C5C',
+                  900: '#9E9E9E',
               },
               secondary: {
                   DEFAULT: '#7C7C7C',
@@ -51,6 +51,7 @@ export const tokens = (mode: string) => ({
               primary: {
                   DEFAULT: '#FFFFFF',
                   500: '#F7F7F7',
+                  900: '#5C5C5C',
               },
               secondary: {
                   DEFAULT: '#7C7C7C',

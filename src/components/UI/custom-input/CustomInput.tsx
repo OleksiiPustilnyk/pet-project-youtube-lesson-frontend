@@ -7,7 +7,7 @@ interface CustomInputProps {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
     label: string
 }
-
+// TODO: need finish
 const CustomInput: FC<CustomInputProps> = ({
     value,
     onChange,

@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import { FC, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../utils/hook'
 import { getNews } from '../../store/thunks/news'
 import { Grid, Typography } from '@mui/material'

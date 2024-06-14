@@ -21,8 +21,8 @@ const SidebarHeader: FC<SidebarHeaderProps> = ({
             <FlexBetween>
                 <Box className={classes.brand}>
                     <img src={Logo} alt="Logo" />
-                    <Typography variant="h1" className={classes.brandTitle}>
-                        Demo
+                    <Typography variant="h3" className={classes.brandTitle}>
+                        TaCrypto
                     </Typography>
                 </Box>
                 {!isNonMobile && (

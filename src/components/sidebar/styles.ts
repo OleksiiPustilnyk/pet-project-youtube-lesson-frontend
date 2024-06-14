@@ -5,6 +5,11 @@ import { tokens } from '../../theme'
 export const useStyles = makeStyles((theme: Theme) => {
     const colors = tokens(theme.palette.mode)
     return {
+        drawer: {
+            color: theme.palette.secondary.main,
+            backgroundColor: theme.palette.primary.main,
+            boxSizing: 'border-box',
+        },
         navBlock: {
             width: '100%',
             borderBottom: `1px solid ${colors.borderColor}`,
@@ -22,6 +27,7 @@ export const useStyles = makeStyles((theme: Theme) => {
                     ? colors.white.DEFAULT
                     : colors.black.DEFAULT
             }`,
+            fontWeight: '600 !important',
         },
         navList: {
             marginBottom: '55px',

@@ -8,27 +8,36 @@ import { getPublicUser, updateUserInfo } from '../../../store/thunks/auth'
 const SettingsPersonalInfoComponent: FC = (): JSX.Element => {
     const dispatch = useAppDispatch()
     const classes = useStyles()
-    const [name, setName] = useState('')
-    const [username, setUsername] = useState('')
-    const [email, setEmail] = useState('')
+
     const { user } = useAppSelector((state) => state.auth.user)
+
+    const [formData, setFormData] = useState({
+        firstName: '',
+        username: '',
+        email: '',
+    })
 
     useEffect(() => {
         if (user) {
-            setName(user.firstName)
-            setUsername(user.username)
-            setEmail(user.email)
+            setFormData({
+                firstName: user.firstName,
+                username: user.username,
+                email: user.email,
+            })
         }
     }, [user])
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }))
+    }
+
     const handleSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault()
-        const data = {
-            firstName: name,
-            username: username,
-            email: email,
-        }
-        dispatch(updateUserInfo(data))
+        dispatch(updateUserInfo(formData))
         dispatch(getPublicUser())
     }
 
@@ -43,24 +52,27 @@ const SettingsPersonalInfoComponent: FC = (): JSX.Element => {
             <Box className={classes.formWrapper}>
                 <TextField
                     className={classes.inputField}
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
                     type="text"
                     label="Name"
                     variant="outlined"
                 />
                 <TextField
                     className={classes.inputField}
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    name="username"
+                    value={formData.username}
+                    onChange={handleChange}
                     type="text"
                     label="Username"
                     variant="outlined"
                 />
                 <TextField
                     className={classes.inputField}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     type="text"
                     label="Email"
                     variant="outlined"
@@ -72,4 +84,5 @@ const SettingsPersonalInfoComponent: FC = (): JSX.Element => {
         </Grid>
     )
 }
+
 export default SettingsPersonalInfoComponent

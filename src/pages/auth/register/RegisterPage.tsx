@@ -74,11 +74,6 @@ const RegisterPage: React.FC<IPropsRegister> = (
             />
             <AppLoadingButton
                 loading={loading}
-                sx={{
-                    marginTop: 2,
-                    marginBottom: 2,
-                    width: ' 60%',
-                }}
                 variant="contained"
                 type="submit"
             >

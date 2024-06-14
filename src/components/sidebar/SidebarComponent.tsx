@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react'
-import { Box, Drawer, useTheme } from '@mui/material'
+import { Box, Drawer } from '@mui/material'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useStyles } from './styles'
 import { ISidebarProps } from '../../common/types/sidebar'
@@ -16,7 +16,6 @@ const SidebarComponent: FC<ISidebarProps> = (
     const classes = useStyles()
     const { pathname } = useLocation()
     const navigate = useNavigate()
-    const theme = useTheme()
 
     useEffect(() => {
         setActive(pathname)
@@ -36,12 +35,10 @@ const SidebarComponent: FC<ISidebarProps> = (
                     onClose={() => setIsOpen(false)}
                     variant="persistent"
                     anchor="left"
+                    className={classes.drawer}
                     sx={{
                         width: drawerWidth,
                         '& .MuiDrawer-paper': {
-                            color: theme.palette.secondary.main,
-                            backgroundColor: theme.palette.primary.main,
-                            boxSizing: 'border-box',
                             width: drawerWidth,
                         },
                     }}

@@ -25,14 +25,18 @@ const NewsBlock: FC<NewsBlockProps> = ({ newsItem }): JSX.Element => {
                 <Box className={classes.newsTitle}>
                     <Typography variant="h3">{newsItem.title}</Typography>
                 </Box>
-                <Box>
+                <Box className={classes.newsText}>
                     <Typography variant="body1">{newsItem.body}</Typography>
                 </Box>
             </Grid>
             <Grid item xs={12} className={classes.readMore}>
-                <Typography variant="h4">
-                    <Link href={newsItem.url}>Read more...</Link>
-                </Typography>
+                <Link
+                    href={newsItem.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Read more...
+                </Link>
             </Grid>
         </Grid>
     )

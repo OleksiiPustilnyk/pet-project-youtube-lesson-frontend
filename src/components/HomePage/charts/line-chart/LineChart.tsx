@@ -54,8 +54,8 @@ const LineChart: FC<ILineChartProps> = (props: ILineChartProps) => {
                 data: data[0].price_chart_data.map(
                     (element: any) => element[1]
                 ),
-                borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgb(241, 196, 15)',
+                backgroundColor: 'rgba(241, 196, 15, 0.5)',
             },
         ],
     }

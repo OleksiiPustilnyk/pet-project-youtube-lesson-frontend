@@ -8,7 +8,7 @@ interface UserGreetingProps {
 const UserGreeting: FC<UserGreetingProps> = ({ user }): JSX.Element => {
     return (
         <Typography variant="h3">
-            Welcome {user ? `${user.firstName}` : ''}
+            Welcome, {user ? `${user.firstName}` : ''}
         </Typography>
     )
 }

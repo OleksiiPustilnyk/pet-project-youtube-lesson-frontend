@@ -64,8 +64,8 @@ const AreaChart: FC<IAreaChartProps> = (props: IAreaChartProps) => {
                 backgroundColor: (context: ScriptableContext<'line'>) => {
                     const ctx = context.chart.ctx
                     const gradient = ctx.createLinearGradient(0, 0, 0, 180)
-                    gradient.addColorStop(0, '#B0C4DE') // Светло-серый
-                    gradient.addColorStop(1, '#4169E1') // Синий
+                    gradient.addColorStop(0, '#32dbbe')
+                    gradient.addColorStop(1, '#008dff')
                     return gradient
                 },
             },
