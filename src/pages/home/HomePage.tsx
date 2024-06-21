@@ -58,19 +58,13 @@ const HomePage: FC = (): JSX.Element => {
                     <FavoriteAssetCard key={element.name} element={element} />
                 ))}
             </Grid>
-            <Grid container className={classes.lineChartBlock}>
+            <Grid container>
                 <Grid item xs={12} sm={12} lg={12}>
                     {filteredArray.length && <LineChart data={filteredArray} />}
                 </Grid>
             </Grid>
             <Grid container>
-                <Grid
-                    item
-                    xs={12}
-                    sm={12}
-                    lg={12}
-                    className={classes.topPriceRoot}
-                >
+                <Grid item xs={12} sm={12} lg={12}>
                     <TopPriceComponent
                         assets={filteredAssetArray.slice(0, 6)}
                     />

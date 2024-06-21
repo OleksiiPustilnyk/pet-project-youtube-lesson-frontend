@@ -4,6 +4,7 @@ import FlexBetween from '../../flex-between/FlexBetween'
 import { ISingleAsset } from '../../../common/types/assets'
 import { useStyles } from '../../../pages/single-asset/styles'
 import AssetDetail from './AssetDetail'
+import BlockBg from '../../block-bg/BlockBg'
 
 interface AssetInfoProps {
     asset: ISingleAsset
@@ -18,20 +19,22 @@ const AssetInfo: FC<AssetInfoProps> = ({ asset }) => {
                 <Typography variant="h1">{asset.name}</Typography>
             </Grid>
             <Grid item sm={6} xs={12} className={classes.card}>
-                <Grid className={classes.cardItem}>
-                    <FlexBetween>
-                        <Avatar
-                            src={asset.image}
-                            className={classes.assetIcon}
-                        />
-                        <Typography
-                            variant="h2"
-                            className={classes.assetSymbol}
-                        >
-                            {asset.symbol.toUpperCase()}
-                        </Typography>
-                    </FlexBetween>
-                </Grid>
+                <BlockBg>
+                    <Grid className={classes.cardItem}>
+                        <FlexBetween>
+                            <Avatar
+                                src={asset.image}
+                                className={classes.assetIcon}
+                            />
+                            <Typography
+                                variant="h2"
+                                className={classes.assetSymbol}
+                            >
+                                {asset.symbol.toUpperCase()}
+                            </Typography>
+                        </FlexBetween>
+                    </Grid>
+                </BlockBg>
             </Grid>
             <AssetDetail title="Price:" value={`$ ${asset.current_price}`} />
             <AssetDetail

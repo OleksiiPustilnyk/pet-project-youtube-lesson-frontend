@@ -32,24 +32,35 @@ export const useStyles = makeStyles((theme: Theme) => {
         navList: {
             marginBottom: '55px',
         },
+
         navItem: {
             '& .MuiListItemIcon-root': {
                 color: colors.secondary.DEFAULT,
             },
-            '&:hover': {
+            '& .MuiListItemText-root': {
+                color: colors.secondary.DEFAULT,
+            },
+            '&.Mui-selected, &:hover': {
                 backgroundColor: '#4CAF50 !important',
                 color: '#fff',
                 borderRadius: '4px',
                 '& .MuiSvgIcon-root': {
                     color: `${colors.white.DEFAULT} !important`,
                 },
+                '& .MuiListItemText-root': {
+                    color: `${colors.white.DEFAULT} !important`,
+                },
             },
         },
+
         active: {
             backgroundColor: '#4CAF50 !important',
             color: '#fff !important',
             borderRadius: '4px !important',
             '& .MuiListItemIcon-root': {
+                color: '#fff !important',
+            },
+            '& .MuiListItemText-root': {
                 color: '#fff !important',
             },
         },

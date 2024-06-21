@@ -22,7 +22,7 @@ const SidebarHeader: FC<SidebarHeaderProps> = ({
                 <Box className={classes.brand}>
                     <img src={Logo} alt="Logo" />
                     <Typography variant="h3" className={classes.brandTitle}>
-                        TaCrypto
+                        TaCrypta
                     </Typography>
                 </Box>
                 {!isNonMobile && (

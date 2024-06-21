@@ -8,5 +8,9 @@ const AppButton = styled(Button)({
     padding: '10px 20px !important',
     color: 'white !important',
     maxWidth: 300,
+    '&:hover': {
+        backgroundColor: '#45a049 !important',
+        boxShadow: '0px 2px 9px #2e7d32 !important',
+    },
 })
 export default AppButton

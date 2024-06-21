@@ -1,9 +1,10 @@
 import { FC, useState } from 'react'
-import { Box, Grid, TextField } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { useStyles } from '../settings-personal-info/styles'
 import AppLoadingButton from '../../UI/loading-button/AppLoadingButton'
 import { useAppDispatch } from '../../../utils/hook'
 import { updateUserPassword } from '../../../store/thunks/auth'
+import TextFieldComponent from '../../UI/custom-input/TextFieldComponent'
 
 const ChangePasswordComponent: FC = (): JSX.Element => {
     const [newPassword, setNewPassword] = useState('')
@@ -30,24 +31,22 @@ const ChangePasswordComponent: FC = (): JSX.Element => {
             onSubmit={handleChangePassword}
         >
             <Box className={classes.formWrapper}>
-                <TextField
-                    className={classes.inputField}
+                <TextFieldComponent
+                    label="Old password"
+                    placeholder="Enter your old password"
+                    type="password"
                     value={oldPassword}
                     onChange={(e) => setOldPassword(e.target.value)}
-                    type="text"
-                    label="Old password"
-                    variant="outlined"
                 />
-                <TextField
-                    className={classes.inputField}
+                <TextFieldComponent
+                    label="New password"
+                    placeholder="Enter your new password"
+                    type="password"
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
-                    type="text"
-                    label="New password"
-                    variant="outlined"
                 />
                 <Box>
-                    <AppLoadingButton className={classes.button} type="submit">
+                    <AppLoadingButton type="submit">
                         Change password
                     </AppLoadingButton>
                 </Box>

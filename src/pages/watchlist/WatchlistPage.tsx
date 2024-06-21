@@ -30,7 +30,7 @@ const WatchlistPage: FC = (): JSX.Element => {
                     Favorites
                 </Typography>
             </Grid>
-            <Grid item xs={12} className={classes.assetsTableBlock}>
+            <Grid item xs={12}>
                 <AssetsTableComponent assets={filteredAssets} />
             </Grid>
         </Grid>

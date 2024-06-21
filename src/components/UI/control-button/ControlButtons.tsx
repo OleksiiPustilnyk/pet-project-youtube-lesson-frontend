@@ -1,7 +1,9 @@
 import { FC } from 'react'
-import { Button, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { useStyles } from '../../../pages/single-asset/styles'
+import AppButton from '../app-button/AppButton'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 
 interface ControlButtonsProps {
     handleCreateRecord: () => void
@@ -17,22 +19,23 @@ const ControlButtons: FC<ControlButtonsProps> = ({ handleCreateRecord }) => {
             justifyContent="center"
             className={classes.cardButtonBlock}
         >
-            <Button
+            <AppButton
                 color="success"
                 variant="outlined"
                 className={classes.cardButton}
                 onClick={() => navigate(-1)}
+                startIcon={<ArrowBackIcon />}
             >
                 Back
-            </Button>
-            <Button
+            </AppButton>
+            <AppButton
                 color="success"
                 variant="outlined"
                 className={classes.cardButton}
                 onClick={handleCreateRecord}
             >
                 Add to favorites
-            </Button>
+            </AppButton>
         </Grid>
     )
 }

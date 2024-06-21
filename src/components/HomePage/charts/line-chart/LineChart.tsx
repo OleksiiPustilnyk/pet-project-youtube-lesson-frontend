@@ -12,6 +12,7 @@ import {
 import { Line } from 'react-chartjs-2'
 import { ILineChartProps } from '../../../../common/types/assets'
 import moment from 'moment'
+import BlockBg from '../../../block-bg/BlockBg'
 
 ChartJS.register(
     CategoryScale,
@@ -60,7 +61,11 @@ const LineChart: FC<ILineChartProps> = (props: ILineChartProps) => {
         ],
     }
 
-    return <Line options={options} data={values} width="100%" height="20%" />
+    return (
+        <BlockBg>
+            <Line options={options} data={values} width="100%" height="20%" />
+        </BlockBg>
+    )
 }
 
 export default LineChart

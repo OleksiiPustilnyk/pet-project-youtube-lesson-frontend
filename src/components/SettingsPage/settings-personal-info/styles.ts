@@ -29,8 +29,5 @@ export const useStyles = makeStyles((theme: Theme) => {
             width: '40%',
             marginBottom: '15px !important',
         },
-        button: {
-            marginTop: 32,
-        },
     }
 })

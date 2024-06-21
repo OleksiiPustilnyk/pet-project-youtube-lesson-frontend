@@ -1,9 +1,10 @@
 import { FC, useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../utils/hook'
-import { Box, Grid, TextField } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { useStyles } from './styles'
 import AppLoadingButton from '../../UI/loading-button/AppLoadingButton'
 import { getPublicUser, updateUserInfo } from '../../../store/thunks/auth'
+import TextFieldComponent from '../../UI/custom-input/TextFieldComponent'
 
 const SettingsPersonalInfoComponent: FC = (): JSX.Element => {
     const dispatch = useAppDispatch()
@@ -50,34 +51,28 @@ const SettingsPersonalInfoComponent: FC = (): JSX.Element => {
             onSubmit={handleSubmit}
         >
             <Box className={classes.formWrapper}>
-                <TextField
-                    className={classes.inputField}
+                <TextFieldComponent
+                    label="Name"
+                    placeholder="Enter your name"
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    type="text"
-                    label="Name"
-                    variant="outlined"
                 />
-                <TextField
-                    className={classes.inputField}
+                <TextFieldComponent
+                    label="Username"
+                    placeholder="Enter your username"
                     name="username"
                     value={formData.username}
                     onChange={handleChange}
-                    type="text"
-                    label="Username"
-                    variant="outlined"
                 />
-                <TextField
-                    className={classes.inputField}
+                <TextFieldComponent
+                    label="Email"
+                    placeholder="Enter your email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    type="text"
-                    label="Email"
-                    variant="outlined"
                 />
-                <Box className={classes.button}>
+                <Box>
                     <AppLoadingButton type="submit">Save</AppLoadingButton>
                 </Box>
             </Box>
