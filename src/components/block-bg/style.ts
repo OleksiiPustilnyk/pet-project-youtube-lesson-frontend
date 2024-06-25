@@ -13,7 +13,7 @@ export const useStyles = makeStyles((theme: Theme) => {
             }`,
             padding: '20px 16px',
             marginBottom: 32,
-            minHeight: 200,
+            // minHeight: 200,
             border: `1px solid ${colors.borderColor}`,
             borderRadius: 12,
             '& .MuiPaper-root': {
