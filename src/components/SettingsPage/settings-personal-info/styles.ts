@@ -1,17 +1,11 @@
 import { makeStyles } from '@mui/styles'
 import { Theme } from '@mui/material'
-import { tokens } from '../../theme'
+import { tokens } from '../../../theme'
 
 export const useStyles = makeStyles((theme: Theme) => {
     const colors = tokens(theme.palette.mode)
     return {
         root: {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100vw',
-            height: '100vh',
-            padding: '20px',
             '& .MuiOutlinedInput-root': {
                 '&.Mui-focused fieldset': {
                     borderColor: colors.green,
@@ -25,13 +19,15 @@ export const useStyles = makeStyles((theme: Theme) => {
                 }`,
             },
         },
-        form: {
-            flex: 1,
+        formWrapper: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding: '32px 0',
         },
-        incitingText: {
-            color: '#4CAF50',
-            marginLeft: '10px',
-            cursor: 'pointer',
+        inputField: {
+            width: '40%',
+            marginBottom: '15px !important',
         },
     }
 })

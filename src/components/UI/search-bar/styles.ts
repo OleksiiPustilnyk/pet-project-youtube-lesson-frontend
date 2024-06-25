@@ -1,17 +1,26 @@
 import { makeStyles } from '@mui/styles'
 import { Theme } from '@mui/material'
-import { tokens } from '../../theme'
+import { tokens } from '../../../theme'
 
 export const useStyles = makeStyles((theme: Theme) => {
     const colors = tokens(theme.palette.mode)
+
     return {
-        root: {
+        searchBlock: {
             display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100vw',
-            height: '100vh',
-            padding: '20px',
+            maxHeight: '45px',
+            borderRadius: '8px',
+            backgroundColor: `${colors.primary[600]}`,
+        },
+        searchIcon: {
+            '&:hover': {
+                backgroundColor: 'transparent',
+            },
+        },
+        searchInput: {
+            padding: '18px 12px',
+        },
+        root: {
             '& .MuiOutlinedInput-root': {
                 '&.Mui-focused fieldset': {
                     borderColor: colors.green,
@@ -24,14 +33,6 @@ export const useStyles = makeStyles((theme: Theme) => {
                         : colors.black.DEFAULT
                 }`,
             },
-        },
-        form: {
-            flex: 1,
-        },
-        incitingText: {
-            color: '#4CAF50',
-            marginLeft: '10px',
-            cursor: 'pointer',
         },
     }
 })

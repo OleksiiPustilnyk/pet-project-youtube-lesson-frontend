@@ -14,7 +14,7 @@ export const tokens = (mode: string) => ({
                   600: '#232323',
                   700: '#3D3D3D',
                   800: '#525252',
-                  900: '#5C5C5C',
+                  900: '#9E9E9E',
               },
               secondary: {
                   DEFAULT: '#7C7C7C',
@@ -40,7 +40,7 @@ export const tokens = (mode: string) => ({
               },
               accentMain: '#0F0E0E',
               borderColor: '#3C3C3C',
-              blue: '#1900D5',
+              green: '#4CAF50',
           }
         : {
               white: {
@@ -51,6 +51,7 @@ export const tokens = (mode: string) => ({
               primary: {
                   DEFAULT: '#FFFFFF',
                   500: '#F7F7F7',
+                  900: '#5C5C5C',
               },
               secondary: {
                   DEFAULT: '#7C7C7C',
@@ -72,7 +73,7 @@ export const tokens = (mode: string) => ({
               },
               accentMain: '#F7F7F7',
               borderColor: '#D1D1D1',
-              blue: '#1900D5',
+              green: '#4CAF50',
           }),
 })
 
@@ -127,7 +128,7 @@ export const themeSettings: any = (mode: string) => {
             },
             h4: {
                 fontFamily: ['Poppins', 'sans-serif'].join(','),
-                fontSize: 25,
+                fontSize: 22,
                 fontWeight: 500,
             },
             p: {

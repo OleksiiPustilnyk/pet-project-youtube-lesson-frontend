@@ -1,14 +1,14 @@
-import HomePage from './pages/home'
+import HomePage from './pages/home/HomePage'
 import { Route, Routes } from 'react-router-dom'
 import PrivateRouter from './utils/router/privateRouter'
-import AuthRootPage from './pages/auth'
+import AuthRootPage from './pages/auth/AuthRootPage'
 import { ColorModeContext, useMode } from './theme'
 import { ThemeProvider, CssBaseline } from '@mui/material'
-import LayoutComponent from './components/layout'
-import WatchlistPage from './pages/watchlist'
-import NewsPage from './pages/news'
-import SettingsPage from './pages/settings'
-import SingleAssetPage from './pages/single-asset'
+import LayoutComponent from './components/layout/LayoutComponent'
+import WatchlistPage from './pages/watchlist/WatchlistPage'
+import NewsPage from './pages/news/NewsPage'
+import SettingsPage from './pages/settings/SettingsPage'
+import SingleAssetPage from './pages/single-asset/SingleAssetPage'
 
 function App() {
     const [theme, colorMode] = useMode()

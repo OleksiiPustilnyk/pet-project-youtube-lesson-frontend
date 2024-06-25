@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme: Theme) => {
         },
         topCardItem: {
             backgroundColor: `${theme.palette.mode === 'light' ? colors.primary.DEFAULT : colors.primary[600]}`,
-            padding: '20px 16px',
+            padding: '20px 30px',
             minHeight: 185,
             border: `1px solid ${colors.borderColor}`,
             borderRadius: 12,
@@ -55,26 +55,6 @@ export const useStyles = makeStyles((theme: Theme) => {
             backgroundColor: '#FFA7A7',
             color: '#740000',
             width: 'max-content',
-        },
-        lineChartBlock: {
-            backgroundColor: `${theme.palette.mode === 'light' ? colors.primary.DEFAULT : colors.primary[600]}`,
-            padding: '20px 16px',
-            minHeight: 270,
-            border: `1px solid ${colors.borderColor}`,
-            borderRadius: 12,
-            marginBottom: 32,
-        },
-        topPriceRoot: {
-            backgroundColor: `${theme.palette.mode === 'light' ? colors.primary.DEFAULT : colors.primary[600]}`,
-            padding: '20px 16px',
-            minHeight: 270,
-            border: `1px solid ${colors.borderColor}`,
-            borderRadius: 12,
-            '& .MuiPaper-root': {
-                backgroundColor: 'transparent !important',
-                boxShadow: 'none !important',
-                backgroundImage: 'none !important',
-            },
         },
     }
 })

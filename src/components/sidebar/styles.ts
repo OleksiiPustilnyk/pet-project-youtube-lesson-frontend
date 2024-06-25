@@ -5,6 +5,11 @@ import { tokens } from '../../theme'
 export const useStyles = makeStyles((theme: Theme) => {
     const colors = tokens(theme.palette.mode)
     return {
+        drawer: {
+            color: theme.palette.secondary.main,
+            backgroundColor: theme.palette.primary.main,
+            boxSizing: 'border-box',
+        },
         navBlock: {
             width: '100%',
             borderBottom: `1px solid ${colors.borderColor}`,
@@ -22,24 +27,42 @@ export const useStyles = makeStyles((theme: Theme) => {
                     ? colors.white.DEFAULT
                     : colors.black.DEFAULT
             }`,
+            fontWeight: '600 !important',
         },
         navList: {
             marginBottom: '55px',
         },
+
         navItem: {
-            '&:hover': {
-                backgroundColor: '#1900D5 !important',
+            '& .MuiListItemIcon-root': {
+                color: colors.secondary.DEFAULT,
+            },
+            '& .MuiListItemText-root': {
+                color: colors.secondary.DEFAULT,
+            },
+            '&.Mui-selected, &:hover': {
+                backgroundColor: '#4CAF50 !important',
                 color: '#fff',
                 borderRadius: '4px',
                 '& .MuiSvgIcon-root': {
                     color: `${colors.white.DEFAULT} !important`,
                 },
+                '& .MuiListItemText-root': {
+                    color: `${colors.white.DEFAULT} !important`,
+                },
             },
         },
+
         active: {
-            backgroundColor: '#1900D5 !important',
+            backgroundColor: '#4CAF50 !important',
             color: '#fff !important',
             borderRadius: '4px !important',
+            '& .MuiListItemIcon-root': {
+                color: '#fff !important',
+            },
+            '& .MuiListItemText-root': {
+                color: '#fff !important',
+            },
         },
     }
 })
