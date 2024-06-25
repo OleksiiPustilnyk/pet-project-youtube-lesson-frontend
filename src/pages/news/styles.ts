@@ -24,13 +24,23 @@ export const useStyles = makeStyles((theme: Theme) => {
             marginBottom: 32,
         },
         readMore: {
+            marginTop: '25px !important',
             textAlign: 'center',
         },
         img: {
             textAlign: 'center',
         },
+        image: {
+            borderRadius: 12,
+        },
         newsText: {
             color: `${colors.primary[900]}`,
+        },
+        loading: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100%',
         },
     }
 })
